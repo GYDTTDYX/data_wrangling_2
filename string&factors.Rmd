@@ -157,7 +157,9 @@ inspection_df |>
 ```{r}
 inspection_df |>
   filter(str_detect(dba, "PIZZA"))|>
-  mutate(boro = fct_infreq(boro))|>
+  mutate(
+    boro = fct_infreq(boro)
+    )|>
   ggplot(aes(x = boro, fill = grade)) + 
   geom_bar()
 ```
